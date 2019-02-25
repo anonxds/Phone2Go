@@ -42,6 +42,7 @@ namespace Phone2Go
         {
             Suscritos s = new Suscritos();
             s.Show();
+            this.Hide();
         }
     }
 }

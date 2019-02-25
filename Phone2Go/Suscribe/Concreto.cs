@@ -10,20 +10,22 @@ namespace Phone2Go.Suscribe
     {
         private string _name;
         private string _Estado;
+        private string _correo;
         private SujetoConcreto _sujeto;
 
-        public Concreto(string name, SujetoConcreto sujeto)
+        public Concreto(string name, SujetoConcreto sujeto,string correo)
         {
             _name = name;
           
             _sujeto = sujeto;
+            _correo = correo;
         }
 
         public override void Update()
         {
 
             _Estado = _sujeto.Estado;
-            MessageBox.Show("El usuario "+_name,_Estado);
+            MessageBox.Show("El usuario "+_name + _correo,_Estado);
         }
         public SujetoConcreto Sujeto
         {

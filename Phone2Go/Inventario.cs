@@ -16,7 +16,7 @@ namespace Phone2Go
         public Inventario()
         {
             InitializeComponent();
-            cbtipo.Items.Add("dad");
+            
             s.dgrid(dataGridView1, "select * from Inventario");
             s.populate(cbtipo, "select * from Inventario", "Tipo");
 
@@ -46,6 +46,8 @@ namespace Phone2Go
         }
         public void clean()
         {
+            txtnombre.Text = txtcantidad.Text = "";
+            btnagregar.Enabled = false;
             cbtipo.Text = txtinventario.Text = null;
             txtinventario.Enabled = Btnmod.Enabled = false;
         }
@@ -77,8 +79,11 @@ namespace Phone2Go
         {
             try
             {
+                
                 string query = string.Format("insert into Inventario (Tipo, Stock) values ('{0}','{1}')",txtnombre.Text,txtcantidad.Text);
                 s.Exe(query);
+                clean();
+                s.dgrid(dataGridView1, "select * from Inventario");
                 MessageBox.Show("Se inserto el nuevo elemento");
             }
             catch
