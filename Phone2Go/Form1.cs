@@ -18,7 +18,10 @@ namespace Phone2Go
 {
     public partial class Form1 : Form
     {
-     
+        //este codigo quedo horrendo, pero hace su funcion segun profesor parra. reparare el codigo muy pronto
+        //Portada, frase, mapa mental, Contenido, Conclusion
+
+        Sqlite s = new Sqlite();
         public Form1()
         {
             InitializeComponent();
@@ -58,6 +61,7 @@ namespace Phone2Go
                 case "Iphone XI":
                     lblprecio.Text = iphone.price().ToString();
                     lblspecs.Text = iphone.Infoname().ToString();
+                    
                     break;
                 case "Huawie Obvlion":
                     lblprecio.Text = huawie.price().ToString();
@@ -102,15 +106,15 @@ namespace Phone2Go
             {
                 case 0:
                     Price p = new Price();
-                    p.fullprice(lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
+                    p.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
                     break;
                 case 1:
                     Huawie2 h = new Huawie2();
-                    h.fullprice(lblprecio, cbStorage, cbCamera, comboBox3);
+                    h.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
                 case 2:
                     Pixel2 pi = new Pixel2();
-                    pi.fullprice(lblprecio, cbStorage, cbCamera, comboBox3);
+                    pi.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
             }
         
@@ -124,15 +128,15 @@ namespace Phone2Go
             {
                 case 0:
                     Price p = new Price();
-                    p.fullprice(lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
+                    p.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
                     break;
                 case 1:
                     Huawie2 h = new Huawie2();
-                    h.fullprice(lblprecio, cbStorage, cbCamera, comboBox3);
+                    h.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
                 case 2:
                     Pixel2 pi = new Pixel2();
-                    pi.fullprice(lblprecio, cbStorage, cbCamera, comboBox3);
+                    pi.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
             }
           
@@ -146,15 +150,15 @@ namespace Phone2Go
             {
                 case 0:
                     Price p = new Price();
-                    p.fullprice(lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
+                    p.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
                     break;
                 case 1:
                     Huawie2 h = new Huawie2();
-                    h.fullprice(lblprecio, cbStorage, cbCamera, comboBox3);
+                    h.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
                 case 2:
                     Pixel2 pi = new Pixel2();
-                    pi.fullprice(lblprecio, cbStorage, cbCamera, comboBox3);
+                    pi.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
                     break;
             }
         }
@@ -166,45 +170,59 @@ namespace Phone2Go
 
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
+           
             txtemail.Visible = false;
             cbStorage.Text = cbCamera.Text = cbPhones.Text = comboBox3.Text = lblspecs.Text = lblbateria.Text = lblprecio.Text = null;
             cbStorage.Text = cbCamera.Text = cbPhones.Text = comboBox3.Text = lblspecs.Text = lblbateria.Text = lblprecio.Text = "";
             cbCamera.Enabled = cbStorage.Enabled = comboBox3.Enabled = btncont.Enabled = false;
             txtemail.Visible = false;
+            lblcamara.Text = lblstorage.Text = "";
         }
         public void limpiar()
         {
+            lblcamara.Text = lblstorage.Text = "";
             txtemail.Visible = false;
             cbStorage.Text = cbCamera.Text = cbPhones.Text = comboBox3.Text = lblspecs.Text = lblbateria.Text = lblprecio.Text = null;
             cbStorage.Text = cbCamera.Text = cbPhones.Text = comboBox3.Text = lblspecs.Text = lblbateria.Text = lblprecio.Text = "";
             cbCamera.Enabled = cbStorage.Enabled = comboBox3.Enabled = btncont.Enabled = false;
             txtemail.Visible = false;
+            
         }
         private void btncont_Click(object sender, EventArgs e)
         {
-            Document ticket = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
-            MemoryStream memoryStream = new MemoryStream();
-            PdfWriter wri = PdfWriter.GetInstance(ticket, memoryStream);
-            ticket.AddTitle("Recibo");
-            ticket.AddCreator("Phone2Go");
-            ticket.Open();
-            ticket.Add(new Paragraph(lblspecs.Text + lblspecs.Text + lblcam.Text + lblbateria.Text + lblprecio.Text));
-            wri.CloseStream = false;
-            ticket.Close();
-            memoryStream.Position = 0;
+            try
+            {
+                Document ticket = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                MemoryStream memoryStream = new MemoryStream();
+                PdfWriter wri = PdfWriter.GetInstance(ticket, memoryStream);
+                ticket.AddTitle("Recibo");
+                ticket.AddCreator("Phone2Go");
+                ticket.Open();
+                ticket.Add(new Paragraph(lblspecs.Text + lblspecs.Text + lblcam.Text + lblbateria.Text + lblprecio.Text));
+                wri.CloseStream = false;
+                ticket.Close();
+                memoryStream.Position = 0;
 
-            //
+                //
 
-            MailMessage mail = new MailMessage("bejeweler2@gmail.com", txtemail.Text, "Reticula", "Listado de patos");
-            mail.Attachments.Add(new Attachment(memoryStream, "Recibo.pdf"));
-            SmtpClient client = new SmtpClient("smtp.gmail.com");
-            client.Port = 587;
-            client.Credentials = new System.Net.NetworkCredential("bejeweler2@gmail.com", "bejeweled2012");
-            client.EnableSsl = true;
-            client.Send(mail);
-            limpiar();
-            txtemail.Text = "";
-            MessageBox.Show("Mensaje enviado");
+                MailMessage mail = new MailMessage("bejeweler2@gmail.com", txtemail.Text, "Reticula", "Listado de patos");
+                mail.Attachments.Add(new Attachment(memoryStream, "Recibo.pdf"));
+                SmtpClient client = new SmtpClient("smtp.gmail.com");
+                client.Port = 587;
+                client.Credentials = new System.Net.NetworkCredential("bejeweler2@gmail.com", "bejeweled2012");
+                client.EnableSsl = true;
+                client.Send(mail);
+                string query = string.Format("insert into Ventas (Telefono,Precio,Correo,Fecha) values('{0}','{1}','{2}','{3}')", lblspecs.Text += lblstorage.Text += lblacc.Text, lblprecio.Text, txtemail.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm"));
+                s.Exe(query);
+                limpiar();
+                txtemail.Text = "";
+                MessageBox.Show("Mensaje enviado");
+               
+            }
+            catch
+            {
+                MessageBox.Show("Algo sucedio");
+            }
         }
 
         private void txtemail_TextChanged(object sender, EventArgs e)
@@ -214,6 +232,21 @@ namespace Phone2Go
             {
                 btncont.Enabled = false;
             }
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtmen_TextChanged(object sender, EventArgs e)
+        {
+
+               
+        //    lblprecio.Text = Convert.ToString(double.Parse(lblprecio.Text) * double.Parse(txtmen.Text));
+
+
+
         }
     }
 }

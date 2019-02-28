@@ -19,29 +19,54 @@ namespace Phone2Go
 
         private void button1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void btnbus_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
             Vendedores v = new Vendedores();
             v.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void metroButton2_Click(object sender, EventArgs e)
         {
-            Inventario i = new Inventario();
-            i.Show();
+            Suscritos s = new Suscritos();
+            s.Show();
             this.Hide();
         }
 
-        private void btnbus_Click(object sender, EventArgs e)
+        private void metroButton3_Click(object sender, EventArgs e)
         {
             Filtrar f = new Filtrar();
             f.Show();
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void metroButton4_Click(object sender, EventArgs e)
         {
-            Suscritos s = new Suscritos();
-            s.Show();
+            Inventario i = new Inventario();
+            i.Show();
             this.Hide();
         }
     }

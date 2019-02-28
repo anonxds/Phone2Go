@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Phone2Go.Phones
 {
-  public abstract  class PhoneC
+   public abstract class DecoratorP : Phones2
     {
-        public abstract string GetName();
-        public abstract double GetPrice();
-    
+        public override abstract string Description();
+        
     }
 }

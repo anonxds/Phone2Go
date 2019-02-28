@@ -17,31 +17,30 @@ namespace Phone2Go
         {
             InitializeComponent();
             
-            s.dgrid(dataGridView1, "select * from Inventario");
+            s.dgrid(metroGrid1, "select * from Inventario");
             s.populate(cbtipo, "select * from Inventario", "Tipo");
 
         }
 
         private void btnregresar_Click(object sender, EventArgs e)
         {
-            Menu m = new Menu();
-            m.Show();
-            this.Hide();
+         
         }
 
         private void cbtipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtinventario.Enabled = true;
+            metroButton2.Enabled = true;
         }
 
         private void txtinventario_TextChanged(object sender, EventArgs e)
         {
-            Btnmod.Enabled = true;
+            metroButton1.Enabled = true;
 
             if (string.IsNullOrWhiteSpace(txtinventario.Text))
             {
 
-                Btnmod.Enabled = false;
+                metroButton1.Enabled = false;
             }
         }
         public void clean()
@@ -49,21 +48,11 @@ namespace Phone2Go
             txtnombre.Text = txtcantidad.Text = "";
             btnagregar.Enabled = false;
             cbtipo.Text = txtinventario.Text = null;
-            txtinventario.Enabled = Btnmod.Enabled = false;
+            txtinventario.Enabled = metroButton1.Enabled = false;
         }
         private void Btnmod_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string query = string.Format("update Inventario set Stock = '{0}' where Tipo = '{1}'", txtinventario.Text, cbtipo.Text);
-                s.Exe(query);
-                MessageBox.Show("Se actualizo la informacion");
-                clean();
-            }
-            catch
-            {
-                MessageBox.Show("Hubo un error");
-            }
+          
         }
 
         private void txtinventario_KeyPress(object sender, KeyPressEventArgs e)
@@ -79,12 +68,18 @@ namespace Phone2Go
         {
             try
             {
-                
-                string query = string.Format("insert into Inventario (Tipo, Stock) values ('{0}','{1}')",txtnombre.Text,txtcantidad.Text);
-                s.Exe(query);
-                clean();
-                s.dgrid(dataGridView1, "select * from Inventario");
-                MessageBox.Show("Se inserto el nuevo elemento");
+                if (txtcantidad.Text == "" || txtcantidad.Text == "0" || txtnombre.Text == "")
+                {
+                    MessageBox.Show("Favor de llenar los datos");
+                }
+                else
+                {
+                    string query = string.Format("insert into Inventario (Tipo, Stock) values ('{0}','{1}')", txtnombre.Text, txtcantidad.Text);
+                    s.Exe(query);
+                    clean();
+                    s.dgrid(metroGrid1, "select * from Inventario");
+                    MessageBox.Show("Se inserto el nuevo elemento");
+                }
             }
             catch
             {
@@ -110,6 +105,48 @@ namespace Phone2Go
 
                 btnagregar.Enabled = false;
             }
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = string.Format("update Inventario set Stock = '{0}' where Tipo = '{1}'", txtinventario.Text, cbtipo.Text);
+                s.Exe(query);
+                MessageBox.Show("Se actualizo la informacion");
+                clean();
+                s.dgrid(metroGrid1, "select * from Inventario");
+            }
+            catch
+            {
+                MessageBox.Show("Hubo un error");
+            }
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            string query = string.Format("delete from Inventario where Tipo = '{0}'", cbtipo.Text);
+            s.Exe(query);
+            MessageBox.Show("Elemento eliminado");
+
+            s.dgrid(metroGrid1, "select * from Inventario");
+        }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            Menu m = new Menu();
+            m.Show();
+            this.Hide();
         }
     }
 }

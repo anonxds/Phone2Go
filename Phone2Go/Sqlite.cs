@@ -42,6 +42,23 @@ namespace Phone2Go
             dg.DataSource = dt;
             con.Close();
         }
+        public void f(DataGridView historial, string x, string y)
+        {
+            SQLiteConnection con = new SQLiteConnection("Data Source=./db.sqlite3;Version=3;New=False;Compress=true;");
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            con.Open();
+            cmd = con.CreateCommand();
+            string cmdt = "select * from Inventario";
+            db = new SQLiteDataAdapter(cmdt, con);
+            ds.Reset();
+            db.Fill(ds);
+            dt = ds.Tables[0];
+            historial.DataSource = dt;
+            con.Close();
+            DataView da = new DataView(dt, x, y, DataViewRowState.CurrentRows);
+            historial.DataSource = da;
+        }
         public void populate(ComboBox cb,string query,string type)
         {
             cb.Items.Clear();

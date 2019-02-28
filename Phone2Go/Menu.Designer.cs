@@ -28,72 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnbus = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // button1
+            // button4
             // 
-            this.button1.Location = new System.Drawing.Point(42, 64);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Asesores";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button4.Location = new System.Drawing.Point(329, 385);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Salir";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button2
+            // metroButton4
             // 
-            this.button2.Location = new System.Drawing.Point(123, 64);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Inventario";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.metroButton4.BackgroundImage = global::Phone2Go.Properties.Resources.inventory;
+            this.metroButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton4.Location = new System.Drawing.Point(30, 220);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(95, 89);
+            this.metroButton4.TabIndex = 8;
+            this.metroButton4.Text = "Inventario";
+            this.metroButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroButton4.UseSelectable = true;
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
             // 
-            // button3
+            // metroButton3
             // 
-            this.button3.Location = new System.Drawing.Point(204, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Suscritos";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.metroButton3.BackgroundImage = global::Phone2Go.Properties.Resources.magnifier__1_;
+            this.metroButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton3.Location = new System.Drawing.Point(30, 319);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(95, 89);
+            this.metroButton3.TabIndex = 7;
+            this.metroButton3.Text = "Buscar";
+            this.metroButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
-            // btnbus
+            // metroButton2
             // 
-            this.btnbus.Location = new System.Drawing.Point(297, 64);
-            this.btnbus.Name = "btnbus";
-            this.btnbus.Size = new System.Drawing.Size(75, 23);
-            this.btnbus.TabIndex = 3;
-            this.btnbus.Text = "Busqueda";
-            this.btnbus.UseVisualStyleBackColor = true;
-            this.btnbus.Click += new System.EventHandler(this.btnbus_Click);
+            this.metroButton2.BackgroundImage = global::Phone2Go.Properties.Resources.rss;
+            this.metroButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton2.Location = new System.Drawing.Point(30, 125);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(95, 89);
+            this.metroButton2.TabIndex = 6;
+            this.metroButton2.Text = "Suscritos";
+            this.metroButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackgroundImage = global::Phone2Go.Properties.Resources.seller;
+            this.metroButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.metroButton1.Location = new System.Drawing.Point(30, 30);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(95, 89);
+            this.metroButton1.TabIndex = 5;
+            this.metroButton1.Text = "Asesores";
+            this.metroButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 141);
-            this.Controls.Add(this.btnbus);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(134)))));
+            this.ClientSize = new System.Drawing.Size(416, 433);
+            this.Controls.Add(this.metroButton4);
+            this.Controls.Add(this.metroButton3);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.button4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnbus;
+        private System.Windows.Forms.Button button4;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton metroButton4;
     }
 }

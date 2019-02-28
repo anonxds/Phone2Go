@@ -48,6 +48,15 @@
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblstorage = new System.Windows.Forms.Label();
+            this.btncerrar = new System.Windows.Forms.Button();
+            this.txtmen = new System.Windows.Forms.TextBox();
+            this.txtcam = new System.Windows.Forms.TextBox();
+            this.txtacc = new System.Windows.Forms.TextBox();
+            this.lblpreciocam = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -74,6 +83,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtmen);
             this.panel1.Controls.Add(this.cbStorage);
             this.panel1.Controls.Add(this.lblalma);
             this.panel1.Location = new System.Drawing.Point(37, 108);
@@ -84,7 +94,6 @@
             // cbStorage
             // 
             this.cbStorage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStorage.Enabled = false;
             this.cbStorage.FormattingEnabled = true;
             this.cbStorage.Location = new System.Drawing.Point(6, 35);
             this.cbStorage.Name = "cbStorage";
@@ -103,6 +112,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtcam);
             this.panel2.Controls.Add(this.cbCamera);
             this.panel2.Controls.Add(this.lblcam);
             this.panel2.Location = new System.Drawing.Point(37, 197);
@@ -113,7 +123,6 @@
             // cbCamera
             // 
             this.cbCamera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCamera.Enabled = false;
             this.cbCamera.FormattingEnabled = true;
             this.cbCamera.Location = new System.Drawing.Point(6, 41);
             this.cbCamera.Name = "cbCamera";
@@ -132,6 +141,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtacc);
             this.panel3.Controls.Add(this.comboBox3);
             this.panel3.Controls.Add(this.lblacc);
             this.panel3.Location = new System.Drawing.Point(37, 295);
@@ -173,7 +183,7 @@
             // lblprecio
             // 
             this.lblprecio.AutoSize = true;
-            this.lblprecio.Location = new System.Drawing.Point(392, 284);
+            this.lblprecio.Location = new System.Drawing.Point(392, 306);
             this.lblprecio.Name = "lblprecio";
             this.lblprecio.Size = new System.Drawing.Size(10, 13);
             this.lblprecio.TabIndex = 6;
@@ -183,7 +193,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(346, 284);
+            this.label2.Location = new System.Drawing.Point(346, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 7;
@@ -210,7 +220,7 @@
             // lblbateria
             // 
             this.lblbateria.AutoSize = true;
-            this.lblbateria.Location = new System.Drawing.Point(376, 271);
+            this.lblbateria.Location = new System.Drawing.Point(376, 282);
             this.lblbateria.Name = "lblbateria";
             this.lblbateria.Size = new System.Drawing.Size(10, 13);
             this.lblbateria.TabIndex = 10;
@@ -244,11 +254,94 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Correo";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(327, 238);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Camara";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(330, 282);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Bateria";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(285, 264);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Almacenamiento";
+            // 
+            // lblstorage
+            // 
+            this.lblstorage.AutoSize = true;
+            this.lblstorage.Location = new System.Drawing.Point(376, 264);
+            this.lblstorage.Name = "lblstorage";
+            this.lblstorage.Size = new System.Drawing.Size(10, 13);
+            this.lblstorage.TabIndex = 17;
+            this.lblstorage.Text = " ";
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Location = new System.Drawing.Point(333, 353);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(75, 23);
+            this.btncerrar.TabIndex = 18;
+            this.btncerrar.Text = "Cerrar";
+            this.btncerrar.UseVisualStyleBackColor = true;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // txtmen
+            // 
+            this.txtmen.Location = new System.Drawing.Point(133, 36);
+            this.txtmen.Name = "txtmen";
+            this.txtmen.Size = new System.Drawing.Size(35, 20);
+            this.txtmen.TabIndex = 2;
+            this.txtmen.TextChanged += new System.EventHandler(this.txtmen_TextChanged);
+            // 
+            // txtcam
+            // 
+            this.txtcam.Location = new System.Drawing.Point(133, 42);
+            this.txtcam.Name = "txtcam";
+            this.txtcam.Size = new System.Drawing.Size(35, 20);
+            this.txtcam.TabIndex = 3;
+            // 
+            // txtacc
+            // 
+            this.txtacc.Location = new System.Drawing.Point(133, 39);
+            this.txtacc.Name = "txtacc";
+            this.txtacc.Size = new System.Drawing.Size(35, 20);
+            this.txtacc.TabIndex = 4;
+            // 
+            // lblpreciocam
+            // 
+            this.lblpreciocam.AutoSize = true;
+            this.lblpreciocam.Location = new System.Drawing.Point(403, 264);
+            this.lblpreciocam.Name = "lblpreciocam";
+            this.lblpreciocam.Size = new System.Drawing.Size(10, 13);
+            this.lblpreciocam.TabIndex = 19;
+            this.lblpreciocam.Text = " ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(718, 399);
+            this.Controls.Add(this.lblpreciocam);
+            this.Controls.Add(this.btncerrar);
+            this.Controls.Add(this.lblstorage);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.btnlimpiar);
@@ -264,7 +357,7 @@
             this.Controls.Add(this.cbPhones);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Venta";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -298,6 +391,15 @@
         private System.Windows.Forms.Button btnlimpiar;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblstorage;
+        private System.Windows.Forms.Button btncerrar;
+        private System.Windows.Forms.TextBox txtmen;
+        private System.Windows.Forms.TextBox txtcam;
+        private System.Windows.Forms.TextBox txtacc;
+        private System.Windows.Forms.Label lblpreciocam;
     }
 }
 

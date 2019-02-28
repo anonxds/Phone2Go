@@ -20,11 +20,11 @@ namespace Phone2Go.Suscribe
             _observers.RemoveAt(i);
             
         }
-        public void Notifica()
+        public void Notifica(RichTextBox s)
         {
             foreach(Observer o in _observers)
             {
-                o.Update();
+                o.Update(s);
             }
         }
         public void Populate(ComboBox cb)

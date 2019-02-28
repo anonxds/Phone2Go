@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Phone2Go.Phones
+namespace Phone2Go.Phone.camaras
 {
-    class Xperia
+    class _16mpx
     {
     }
 }
