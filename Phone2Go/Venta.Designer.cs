@@ -168,9 +168,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(231, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Accesorio";
+            this.label1.Text = "Camara";
             // 
             // label6
             // 
@@ -288,7 +288,7 @@
             this.cbpila.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbpila.Enabled = false;
             this.cbpila.FormattingEnabled = true;
-            this.cbpila.Location = new System.Drawing.Point(352, 227);
+            this.cbpila.Location = new System.Drawing.Point(306, 224);
             this.cbpila.Name = "cbpila";
             this.cbpila.Size = new System.Drawing.Size(121, 21);
             this.cbpila.TabIndex = 1;
@@ -299,7 +299,7 @@
             // 
             this.Memoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Memoria.FormattingEnabled = true;
-            this.Memoria.Location = new System.Drawing.Point(352, 253);
+            this.Memoria.Location = new System.Drawing.Point(306, 250);
             this.Memoria.Name = "Memoria";
             this.Memoria.Size = new System.Drawing.Size(121, 21);
             this.Memoria.TabIndex = 2;
@@ -345,11 +345,12 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(479, 254);
+            this.metroLabel1.Location = new System.Drawing.Point(433, 251);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(83, 19);
             this.metroLabel1.TabIndex = 31;
             this.metroLabel1.Text = "metroLabel1";
+            this.metroLabel1.Visible = false;
             // 
             // cbcamaras
             // 
@@ -364,17 +365,18 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(489, 263);
+            this.label11.Location = new System.Drawing.Point(443, 260);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 36;
             this.label11.Text = "label11";
+            this.label11.Visible = false;
             // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 310);
+            this.ClientSize = new System.Drawing.Size(602, 312);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cbcamaras);
             this.Controls.Add(this.label9);

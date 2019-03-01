@@ -10,10 +10,10 @@ namespace Phone2Go.Telefonos.Specs
     {
         Itel _itel = null;
         protected string m_name = "Indefinido";
-        protected double m_price = 0.0;
-        protected double c_price = 0.0;
+        protected  double m_price = 0.0;
+      
 
-        protected Tdecorator(Itel itel)
+        protected  Tdecorator(Itel itel)
         {
             this._itel = itel;
            

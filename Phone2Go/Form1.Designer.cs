@@ -31,12 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbPhones = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtmen = new System.Windows.Forms.TextBox();
             this.cbStorage = new System.Windows.Forms.ComboBox();
             this.lblalma = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtcam = new System.Windows.Forms.TextBox();
             this.cbCamera = new System.Windows.Forms.ComboBox();
             this.lblcam = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtacc = new System.Windows.Forms.TextBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.lblacc = new System.Windows.Forms.Label();
             this.btncont = new System.Windows.Forms.Button();
@@ -53,9 +56,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblstorage = new System.Windows.Forms.Label();
             this.btncerrar = new System.Windows.Forms.Button();
-            this.txtmen = new System.Windows.Forms.TextBox();
-            this.txtcam = new System.Windows.Forms.TextBox();
-            this.txtacc = new System.Windows.Forms.TextBox();
             this.lblpreciocam = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,6 +91,14 @@
             this.panel1.Size = new System.Drawing.Size(189, 83);
             this.panel1.TabIndex = 2;
             // 
+            // txtmen
+            // 
+            this.txtmen.Location = new System.Drawing.Point(133, 36);
+            this.txtmen.Name = "txtmen";
+            this.txtmen.Size = new System.Drawing.Size(35, 20);
+            this.txtmen.TabIndex = 2;
+            this.txtmen.TextChanged += new System.EventHandler(this.txtmen_TextChanged);
+            // 
             // cbStorage
             // 
             this.cbStorage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -119,6 +127,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(189, 80);
             this.panel2.TabIndex = 3;
+            // 
+            // txtcam
+            // 
+            this.txtcam.Location = new System.Drawing.Point(133, 42);
+            this.txtcam.Name = "txtcam";
+            this.txtcam.Size = new System.Drawing.Size(35, 20);
+            this.txtcam.TabIndex = 3;
             // 
             // cbCamera
             // 
@@ -149,10 +164,16 @@
             this.panel3.Size = new System.Drawing.Size(189, 81);
             this.panel3.TabIndex = 4;
             // 
+            // txtacc
+            // 
+            this.txtacc.Location = new System.Drawing.Point(133, 39);
+            this.txtacc.Name = "txtacc";
+            this.txtacc.Size = new System.Drawing.Size(35, 20);
+            this.txtacc.TabIndex = 4;
+            // 
             // comboBox3
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(6, 39);
             this.comboBox3.Name = "comboBox3";
@@ -299,28 +320,6 @@
             this.btncerrar.Text = "Cerrar";
             this.btncerrar.UseVisualStyleBackColor = true;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // txtmen
-            // 
-            this.txtmen.Location = new System.Drawing.Point(133, 36);
-            this.txtmen.Name = "txtmen";
-            this.txtmen.Size = new System.Drawing.Size(35, 20);
-            this.txtmen.TabIndex = 2;
-            this.txtmen.TextChanged += new System.EventHandler(this.txtmen_TextChanged);
-            // 
-            // txtcam
-            // 
-            this.txtcam.Location = new System.Drawing.Point(133, 42);
-            this.txtcam.Name = "txtcam";
-            this.txtcam.Size = new System.Drawing.Size(35, 20);
-            this.txtcam.TabIndex = 3;
-            // 
-            // txtacc
-            // 
-            this.txtacc.Location = new System.Drawing.Point(133, 39);
-            this.txtacc.Name = "txtacc";
-            this.txtacc.Size = new System.Drawing.Size(35, 20);
-            this.txtacc.TabIndex = 4;
             // 
             // lblpreciocam
             // 

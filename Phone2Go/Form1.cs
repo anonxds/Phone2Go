@@ -101,34 +101,29 @@ namespace Phone2Go
         Iphone i = new Iphone();
         private void cbStorage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbCamera.Enabled = true;
-            switch (cbPhones.SelectedIndex)
-            {
-                case 0:
-                    Price p = new Price();
-                    p.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
-                    break;
-                case 1:
-                    Huawie2 h = new Huawie2();
-                    h.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
-                    break;
-                case 2:
-                    Pixel2 pi = new Pixel2();
-                    pi.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
-                    break;
-            }
-        
+            PHD();
+
 
         }
 
         private void cbCamera_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox3.Enabled = true;
+            PHD();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PHD();
+        }
+        public void PHD() {
+
+            txtemail.Visible = true;
+            //  btncont.Enabled = true;
             switch (cbPhones.SelectedIndex)
             {
                 case 0:
                     Price p = new Price();
-                    p.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
+                    p.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
                 case 1:
                     Huawie2 h = new Huawie2();
@@ -139,29 +134,8 @@ namespace Phone2Go
                     pi.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
                     break;
             }
-          
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtemail.Visible = true;
-          //  btncont.Enabled = true;
-            switch (cbPhones.SelectedIndex)
-            {
-                case 0:
-                    Price p = new Price();
-                    p.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
-                    break;
-                case 1:
-                    Huawie2 h = new Huawie2();
-                    h.fullprice(lblstorage, lblbateria, lblprecio, cbStorage, cbCamera, comboBox3, lblcamara);
-                    break;
-                case 2:
-                    Pixel2 pi = new Pixel2();
-                    pi.fullprice(lblstorage,lblbateria,lblprecio, cbStorage, cbCamera, comboBox3,lblcamara);
-                    break;
-            }
-        }
 
         private void lblprecio_Click(object sender, EventArgs e)
         {

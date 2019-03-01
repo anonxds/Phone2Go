@@ -60,7 +60,7 @@ namespace Phone2Go
                 mail.Attachments.Add(new Attachment(memoryStream, "Recibo.pdf"));
                 SmtpClient client = new SmtpClient("smtp.gmail.com");
                 client.Port = 587;
-                client.Credentials = new System.Net.NetworkCredential("bejeweler2@gmail.com", "bejeweled2012");
+                client.Credentials = new System.Net.NetworkCredential("bejeweler2@gmail.com", "");
                 client.EnableSsl = true;
                 client.Send(mail);
           //      string query = string.Format("insert into Ventas (Telefono,Precio,Correo,Fecha) values('{0}','{1}','{2}','{3}')", lblspecs.Text += lblstorage.Text += lblacc.Text, lblprecio.Text, txtemail.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm"));
@@ -200,8 +200,9 @@ namespace Phone2Go
                         }
                         if (int.Parse(txtAcce.Text) >= 1)
                         {
-                       //     phones = new Camaras(phones);
-                         //   Bat(phones, label10, txtAcce, lbldescripcionCam);
+                            label10.Text = Convert.ToString(double.Parse(label11.Text) * double.Parse(txtAcce.Text));
+                            //     phones = new Camaras(phones);
+                            //   Bat(phones, label10, txtAcce, lbldescripcionCam);
                         }
                         break;
                     case "AirPhone":
@@ -221,7 +222,7 @@ namespace Phone2Go
                         }
                         if (int.Parse(txtAcce.Text) >= 1)
                         {
-                          
+                            label10.Text = Convert.ToString(double.Parse(label11.Text) * double.Parse(txtAcce.Text));
                         }
                         break;
 
@@ -350,26 +351,111 @@ namespace Phone2Go
 
         private void cbcamaras_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Phones2 Phones = new HTC();
-            switch (cbcamaras.Text)
+            Phones2 Phones;
+            switch (cbtelefonos.Text)
             {
-                case "8mpx":
-                    Phones = new _8mpx(Phones);
-                    label10.Text = Convert.ToString(Phones.Preciofull());
-                    finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
-                    lblprice.Text = Convert.ToString(Phones.Precio());
+                
+                case "HTC":
+                    
+                    switch (cbcamaras.Text)
+                    {
+
+                        case "8mpx":
+                            Phones = new HTC();
+                            Phones = new _8mpx(Phones);
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                 //           finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                        case "16mpx":
+                            Phones = new HTC();
+                            Phones = new _16mpx(Phones);
+
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+           //                 finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                        case "24mpx":
+                            Phones = new HTC();
+                            Phones = new _24mpx(Phones);
+                          
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                    }
                     break;
-                case "16mpx":
-                   // label10.Text = Convert.ToString(v.Preciofull());
+                case "Xperia":
+                    switch (cbcamaras.Text)
+                    {
+
+                        case "8mpx":
+                            Phones = new Xperia();
+                            Phones = new _8mpx(Phones);
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                        case "16mpx":
+                            Phones = new Xperia();
+                            Phones = new _16mpx(Phones);
+
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                        case "24mpx":
+                            Phones = new Xperia();
+                            Phones = new _24mpx(Phones);
+
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                    }
                     break;
-                case "24mpx":
-                    Phones = new _24mpx(Phones);
-                    label11.Text = Convert.ToString(Phones.Preciofull());
-                    label10.Text = Convert.ToString(Phones.Preciofull());
-                    finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
-                    lblprice.Text = Convert.ToString(finalprice);
+                case "AirPhone":
+                    switch (cbcamaras.Text)
+                    {
+
+                        case "8mpx":
+                            Phones = new AirPhone();
+                            Phones = new _8mpx(Phones);
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                        case "16mpx":
+                            Phones = new AirPhone();
+                            Phones = new _16mpx(Phones);
+
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                        case "24mpx":
+                            Phones = new AirPhone();
+                            Phones = new _24mpx(Phones);
+
+                            label11.Text = Convert.ToString(Phones.Preciofull());
+                            label10.Text = Convert.ToString(Phones.Preciofull());
+                            finalprice = Phones.Preciofull() + double.Parse(lblprice.Text);
+                            lblprice.Text = Convert.ToString(Phones.Precio());
+                            break;
+                    }
                     break;
             }
+
+            
+          
         }
 
         private void txtAcce_KeyPress(object sender, KeyPressEventArgs e)

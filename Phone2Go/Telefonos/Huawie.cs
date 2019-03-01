@@ -9,7 +9,7 @@ namespace Phone2Go.Telefonos
     class Huawie : Itel
     {
         private string m_name = "Huawie Obvlion";
-        private double m_price = 400.00;
+        private static double m_price = 400.00;
         public void Info()
         {
             throw new NotImplementedException();

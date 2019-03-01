@@ -10,6 +10,6 @@ namespace Phone2Go.Telefonos
     {
         void Info();
         string Infoname();
-        double price();
+        double  price();
     }
 }
